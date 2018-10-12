@@ -2,6 +2,7 @@
 # Input: plain text and key as list of hexadecimal numbers.
 # Fixed tables representing the Sbox and permutation layer.
 # $Output: cipher text as a list of hexadecimal numbers.
+
 def enc(plaintext, key):
   SBoxlist = [0x1, 0xa, 0x4, 0xc, 0x6, 0xf, 0x3, 0x9, 0x2, 0xd, 0xb, 0x7, 0x5, 0x0, 0x8, 0xe]
   permutationlayer = [0, 17, 34, 51, 48, 1, 18, 35, 32, 49, 2, 19, 16, 33, 50,
@@ -33,7 +34,7 @@ def enc(plaintext, key):
   cypherhex = []
   for i in range(0,64,4):
     fourbits = "".join(cypherbitslayer[i:i+4])
-    hexvalue = hex(int(fourbits,2))
+    hexvalue = int(fourbits,2)
     cypherhex.append(hexvalue)
 
   return cypherhex
