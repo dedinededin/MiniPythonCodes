@@ -46,7 +46,9 @@ def enc(plaintext, key):
   return cypherhex
 
 
-
+# Input:cipher text and key as list of hexadecimal numbers.
+# Fixed tables representing INVERSE of the Sbox and permutation layer.
+# Output: plain text as a list of hexadecimal numbers.
 def dec(cyphertext, key):
   SBoxlist = inv([0x1, 0xa, 0x4, 0xc, 0x6, 0xf, 0x3, 0x9, 0x2, 0xd, 0xb, 0x7, 0x5, 0x0, 0x8, 0xe])
   permutationlayer =inv([0, 17, 34, 51, 48, 1, 18, 35, 32, 49, 2, 19, 16, 33, 50,
@@ -89,14 +91,13 @@ def dec(cyphertext, key):
 plaintext = [0x2, 0xa, 0x2, 0x3, 0x4, 0x7, 0x6, 0x7, 0x4, 0x9, 0xa, 0xb, 0xc, 0xd, 0xe, 0xf]
 key = [0xc, 0x0, 0x1, 0x4, 0x5, 0x3, 0xe, 0x7, 0xf, 0x8, 0x9, 0xa, 0x2, 0xb, 0x6, 0xd]
 
-
 encrypted = enc(plaintext, key)
 decrypted = dec(encrypted, key)
-isEqual = plaintext==decrypted
+
 print("Plaintext:",plaintext)
 print("Encrypted:",encrypted)
 print("Decrypted:",decrypted)
-print("Is plaintext equals decrypted text?",isEqual)
+print("Is plaintext equals decrypted text?",plaintext==decrypted)
 
 
 
