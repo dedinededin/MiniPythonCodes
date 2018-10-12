@@ -1,7 +1,6 @@
-
 # Input: plain text and key as list of hexadecimal numbers.
 # Fixed tables representing the Sbox and permutation layer.
-# $Output: cipher text as a list of hexadecimal numbers.
+# Output: cipher text as a list of hexadecimal numbers.
 
 def enc(plaintext, key):
   SBoxlist = [0x1, 0xa, 0x4, 0xc, 0x6, 0xf, 0x3, 0x9, 0x2, 0xd, 0xb, 0x7, 0x5, 0x0, 0x8, 0xe]
@@ -29,15 +28,15 @@ def enc(plaintext, key):
   cypherbitslayer = [0] * 64
   for i in range(len(cypherbitslayer)):
     cypherbitslayer[permutationlayer[i]] = cipherbits[i]
-    #cypherbitslayer[i] = permutationlayer[cipherbits[i]]
 
   cypherhex = []
-  for i in range(0,64,4):
-    fourbits = "".join(cypherbitslayer[i:i+4])
-    hexvalue = int(fourbits,2)
+  for i in range(0, 64, 4):
+    fourbits = "".join(cypherbitslayer[i:i + 4])
+    hexvalue = int(fourbits, 2)
     cypherhex.append(hexvalue)
 
   return cypherhex
+
 
 normallist = [0x0, 0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7, 0x8, 0x9, 0xa, 0xb, 0xc, 0xd, 0xe, 0xf]
 print(normallist)
@@ -45,5 +44,5 @@ print(normallist)
 keylist = [0xc, 0x0, 0x1, 0x4, 0x5, 0x3, 0xe, 0x7, 0xf, 0x8, 0x9, 0xa, 0x2, 0xb, 0x6, 0xd]
 print(keylist)
 
-test = enc(normallist,keylist)
+test = enc(normallist, keylist)
 print(test)
