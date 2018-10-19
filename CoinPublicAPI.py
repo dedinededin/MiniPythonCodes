@@ -7,4 +7,4 @@ session.headers.update({
         })
 
 r = requests.get('https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest',headers=session.headers)
-print(r.text)
+print("Test: "+r.text)
