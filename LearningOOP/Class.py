@@ -18,6 +18,10 @@ class Students:
         firstname, lastname, email = data_string.split('-')
         return cls(firstname, lastname, email)
 
+    @staticmethod
+    def counter():
+        print(Students.num_of_students)
+
 
 stu1 = Students('abraham', 'dogan', 'abraham@dogan.com')
 stu2 = Students('ismet', 'deniz', 'enes@dogan.com')
@@ -35,3 +39,4 @@ stu1 = Students.from_string(stu1_string)
 stu1.fullname()
 print(stu1)
 print(Students.num_of_students)
+Students.counter()
