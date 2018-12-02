@@ -7,10 +7,10 @@ class UniversityPeople:
         self.id = id
 
     def fullname(self):
-        print(self.fname + " " + self.lname)
+        print(self.fname + ' ' + self.lname)
 
     def __str__(self):
-        return self.fname + " " + self.lname + " " + self.email + " " + self.id
+        return self.fname + ' ' + self.lname + ' ' + self.email + ' ' + self.id
 
 
 class Students(UniversityPeople):
@@ -28,9 +28,9 @@ class Maths(Teachers):
     pass
 
 
-stu1 = Students("Abraham", "Dogan", "abraham@dogan.com", "1")
-stu2 = Students("Ismet", "Deniz", "ismet@deniz.com", "2")
-maths = Teachers("Emma", "Watson", "emma@watson.com", "3", "97000")
+stu1 = Students('Abraham', 'Dogan', 'abraham@dogan.com', '1')
+stu2 = Students('Ismet', 'Deniz', 'ismet@deniz.com', '2')
+maths = Teachers('Emma', 'Watson', 'emma@watson.com', '3', '97000')
 
 stu1.fullname()
 maths.fullname()
